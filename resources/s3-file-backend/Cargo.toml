@@ -1,0 +1,19 @@
+[package]
+name = "s3-file-backend"
+version = "0.1.0"
+edition = "2018"
+authors = ["Maximilian Schönenberg <github@schoenenberg.email>"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1", features = ["macros", "rt"] }
+lambda_http = "0.4"
+rusoto_core = { version = "0.47", features = ["rustls"], default-features = false }
+rusoto_s3 = { version = "0.47", features = ["rustls"], default-features = false }
+tracing = "0.1.26"
+tracing-subscriber = "0.2.19"
+
+[[bin]]
+name = "bootstrap"
+path = "src/main.rs"
